@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  text-embeddings-inference:
+    ports:
+      - 8080:80
+    platform: linux/amd64
+    volumes:
+      - tei_data:/data
+    image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.2
+    command: --model-id intfloat/multilingual-e5-large-instruct
+
+volumes:
+  postgres_data:
+  tei_data:
