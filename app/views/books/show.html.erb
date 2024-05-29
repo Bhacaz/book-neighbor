@@ -2,9 +2,13 @@
 
 <%= render @book %>
 
-<div>
-  <%= link_to "Edit this book", edit_book_path(@book) %> |
-  <%= link_to "Back to books", books_path %>
+<!--<div>-->
+<!--  <%#= link_to "Edit this book", edit_book_path(@book) %> |-->
+  <%#= link_to "Back to books", books_path %>
 
-  <%= button_to "Destroy this book", @book, method: :delete %>
-</div>
+  <%#= button_to "Destroy this book", @book, method: :delete %>
+<!--</div>-->
+
+<%= turbo_frame_tag 'similar', src: similar_book_path(@book), loading: :lazy do %>
+  <progress max="100" value="0"></progress>
+<% end %>

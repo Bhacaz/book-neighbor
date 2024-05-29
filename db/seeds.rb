@@ -2,7 +2,8 @@
 
 require 'csv'
 
-total_books = `wc -l db/books_1.Best_Books_Ever.csv`.to_i
+# total_books = `wc -l db/books_1.Best_Books_Ever.csv`.to_i
+total_books = 10_000
 puts "Total books: #{total_books}"
 
 count = 0

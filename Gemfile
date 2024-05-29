@@ -39,6 +39,7 @@ gem "bootsnap", require: false
 gem "openlibrary", git: 'https://github.com/Bhacaz/openlibrary', branch: 'update_hashie'
 gem "neighbor"
 gem 'csv'
+gem 'faraday'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

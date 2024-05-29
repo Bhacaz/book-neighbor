@@ -45,6 +45,10 @@ class BooksController < ApplicationController
     redirect_to books_url, notice: "Book was successfully destroyed.", status: :see_other
   end
 
+  def similar
+    @books = BookEmbedding.find_by(book_id: params[:id]).similar_books.includes(:genres)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book

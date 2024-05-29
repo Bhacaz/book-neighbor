@@ -16,7 +16,7 @@ services:
     volumes:
       - tei_data:/data
     image: ghcr.io/huggingface/text-embeddings-inference:cpu-1.2
-    command: --model-id intfloat/multilingual-e5-large-instruct
+    command: --model-id WhereIsAI/UAE-Large-V1
 
 volumes:
   postgres_data:

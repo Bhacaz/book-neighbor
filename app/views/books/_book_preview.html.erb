@@ -1,0 +1,14 @@
+<article style="min-width: 10em">
+  <header>
+    <h2><%= link_to book.title, book_path(book), target: '_top' %></h2>
+  </header>
+  <p>
+    <%= image_tag book.cover_url, width: 100, loading: :lazy %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= book.author %>
+  </p>
+</article>
+
