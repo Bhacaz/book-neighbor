@@ -1,0 +1,55 @@
+<div id="<%= dom_id book %>">
+  <h2><%= book.title %></h2>
+
+  <p>
+    <%= image_tag book.cover_url, width: 100, loading: :lazy %>
+  </p>
+
+  <p>
+    <strong>Series:</strong>
+    <%= book.series %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= book.author %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= book.description %>
+  </p>
+
+  <p>
+    <strong>Genre:</strong>
+    <i>
+      <%= book.genres.map(&:label).join(', ') %>
+    </i>
+  </p>
+
+  <p>
+    <strong>Language:</strong>
+    <%= book.language %>
+  </p>
+
+  <p>
+    <strong>Isbn:</strong>
+    <%= book.isbn %>
+  </p>
+
+  <p>
+    <strong>Page:</strong>
+    <%= book.page %>
+  </p>
+
+  <p>
+    <strong>Publish date:</strong>
+    <%= book.publish_date %>
+  </p>
+
+  <p>
+    <strong>Rating:</strong>
+    <%= book.rating %> ⭐️
+  </p>
+
+</div>
