@@ -3,7 +3,18 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.includes(:genres).limit(10)
+    scope =
+    if params[:q]
+      Book.where("title LIKE ?", "%#{params[:q]}%").or(Book.where("author LIKE ?", "%#{params[:q]}%")).limit(100)
+    else
+      Book.all.limit(10)
+    end
+    @books = scope.includes(:genres)
+  end
+
+  def random
+    @book = Book.order("RANDOM()").first
+    redirect_to @book
   end
 
   # GET /books/1

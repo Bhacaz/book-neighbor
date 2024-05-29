@@ -11,6 +11,20 @@
   </head>
 
   <body>
+  <header>
+    <nav>
+      <menu>
+        <li style="margin: auto"><%= link_to "Home", books_path %></li>
+        <li style="margin: auto"><%= link_to "Random", random_books_path %></li>
+        <li>
+          <%= form_tag books_path, method: :get, style: 'padding: 0' do %>
+            <%= text_field_tag :q, params[:q] %>
+            <%= submit_tag "Search", style: 'display: none' %>
+          <% end %>
+        </li>
+      </menu>
+    </nav>
+  </header>
     <%= yield %>
   </body>
 </html>

@@ -1,11 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Books (<%= Book.count %>)</h1>
+<h1>Books</h1>
+<small>
+  Total: <%= Book.count %>
+</small>
 
 <div id="books">
   <% @books.each do |book| %>
     <%= render partial: 'book_preview', locals: { book: book } %>
   <% end %>
 </div>
-
-<%= link_to "New book", new_book_path %>
