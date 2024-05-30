@@ -9,6 +9,7 @@
   <%#= button_to "Destroy this book", @book, method: :delete %>
 <!--</div>-->
 
+<h2 style="padding-top: 2em">Similar</h2>
 <%= turbo_frame_tag 'similar', src: similar_book_path(@book), loading: :lazy do %>
   <progress max="100" value="0"></progress>
 <% end %>
